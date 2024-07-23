@@ -7,20 +7,18 @@
             <div class="col-12">
                 <div class="card card-info">
                     <div class="card-header">
-                        <div class="card-title">
-                            <h3> Manajemen Supir </h3>
-                        </div>
+                        <h3 class="card-title"> Mobil </h3>
                     </div>
 
                     <div class="card-body">
                         <div>
-                            <a href="{{ route('supir.create')}}" class="btn btn-success mb-3">
+                            <a href="{{ route('mobil.create')}}" class="btn btn-success mb-3">
                                 <i class="fas fa-plus"></i>
-                                <span>Tambah Supir</span>
+                                <span>Tambah Mobil</span>
                             </a>
-                            @if($supirs->isEmpty())
+                            @if($mobils->isEmpty())
                             <div class="alert alert-info">
-                                Tidak Ada Supir
+                                Tidak Ada Mobil Tersedia
                             </div>
                             @else
                         </div>
@@ -28,24 +26,24 @@
                             <thead class="thead-fixed">
                                 <tr>
                                     <th>#</th>
-                                    <th>Nama Supir</th>
-                                    <th>No KTP</th>
-                                    <th>No Telepon</th>
-                                    <th>Aksi Tambahan</th>
+                                    <th> Jenis Mobil </th>
+                                    <th> Plat Kendaraan </th>
+                                    <th> No Lambung Kendaraan </th>
+                                    <th> Aksi </th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach ($supirs as $index=>$supir)
+                                @foreach($mobils as $index=>$mobil)
                                 <tr>
-                                    <td>{{ $index+1 }}</td>
-                                    <td>{{ $supir->nama_supir }}</td>
-                                    <td>{{ $supir->no_ktp }}</td>
-                                    <td>{{ $supir->no_tlp}}</td>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{$mobil->jenis_mobil}}</td>
+                                    <td>{{$mobil->plat_bk}}</td>
+                                    <td>{{$mobil->no_lambung}}</td>
                                     <td>
-                                        <a href="{{ route('supir.edit', $supir->id) }}"
+                                        <a href="{{ route('mobil.edit', $mobil->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>
-                                        <form action="{{ route('supir.destroy', $supir->id) }}" method="POST"
+                                        <form action="{{ route('mobil.destroy', $mobil->id) }}" method="POST"
                                             style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
@@ -64,5 +62,6 @@
         </div>
     </div>
 </section>
+
 
 @endsection

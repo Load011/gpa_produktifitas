@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('m_supir', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_supir');
+            $table->string('no_tlp');
+            $table->string('no_ktp');
+            $table->string('aktif');
             $table->timestamps();
         });
     }

@@ -18,7 +18,29 @@
             <p>Dashboard</p>
           </a>
         </li>
-        <li class="nav-item @if (request()->routeIs('mobil.*') || request()->routeIs('penyewa.*') || request()->routeIs('supir.*'))) menu-open @endif">
+        <li class="nav-item @if (request()->routeIs('kebun.*') || request()->routeIs('afdeling.*'))) menu-open @endif">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tree"></i>
+            <p>Perkebunan
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('kebun.index') }}" class="nav-link @if (request()->routeIs('kebun.*')) active @endif">
+                <i class="nav-icon fab fa-pagelines"></i>
+                <p>Perkebunan Utama</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('afdeling.index') }}" class="nav-link @if (request()->routeIs('afdeling.*')) active @endif">
+                <i class="nav-icon fas fa-campground"></i>
+                <p>Afdeling Kebun</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item @if (request()->routeIs('mobil.*') || request()->routeIs('supir.*'))) menu-open @endif">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-database"></i>
             <p>Mobil & Supir
@@ -41,24 +63,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="{{ route('transaksi.index') }}" class="nav-link @if (request()->routeIs('transaksi.*')) active @endif">
-            <i class="nav-icon fas fa-money-check"></i>
-            <p>Kebun</p>
+          <a href="{{ route('kendaraan.index') }}" class="nav-link @if (request()->routeIs('kendaraan.*')) active @endif">
+            <i class="nav-icon fas fa-truck"></i>
+            <p>Kendaraan</p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ route('kebun.index') }}" class="nav-link @if (request()->routeIs('mobil.*')) active @endif">
-                <i class="nav-icon fas fa-car"></i>
-                <p>Perkebunan Utama</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ route('afd.index') }}" class="nav-link @if (request()->routeIs('supir.*')) active @endif">
-                <i class="nav-icon fas fa-user-tie"></i>
-                <p>Afdeling Kebun</p>
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
     </nav>

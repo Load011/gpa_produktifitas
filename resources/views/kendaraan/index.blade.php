@@ -8,19 +8,19 @@
                 <div class="card card-info">
                     <div class="card-header">
                         <div class="card-title">
-                            <h3> Manajemen Supir </h3>
+                            <h3> Manajemen driver </h3>
                         </div>
                     </div>
 
                     <div class="card-body">
                         <div>
-                            <a href="{{ route('supir.create')}}" class="btn btn-success mb-3">
+                            <a href="{{ route('kendaraan.create')}}" class="btn btn-success mb-3">
                                 <i class="fas fa-plus"></i>
-                                <span>Tambah Supir</span>
+                                <span>Tambah Penempatan Supir</span>
                             </a>
-                            @if($supirs->isEmpty())
+                            @if($drivers->isEmpty())
                             <div class="alert alert-info">
-                                Tidak Ada Supir
+                                Tidak Ada Penempatan
                             </div>
                             @else
                         </div>
@@ -29,23 +29,26 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nama Supir</th>
-                                    <th>No KTP</th>
-                                    <th>No Telepon</th>
-                                    <th>Aksi Tambahan</th>
+                                    <th>Mobil Yang Digunakan</th>
+                                    <th>Harga Per Liter</th>
+                                    <th>Jumlah Pengisian</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach ($supirs as $index=>$supir)
+                                @foreach ($drivers as $index=>$driver)
                                 <tr>
                                     <td>{{ $index+1 }}</td>
-                                    <td>{{ $supir->nama_supir }}</td>
-                                    <td>{{ $supir->no_ktp }}</td>
-                                    <td>{{ $supir->no_tlp}}</td>
+                                    <td>{{ $driver->pengemudi->nama_supir }}</td>
+                                    <td>{{ $driver->mobil->jenis_mobil }}</td>
+                                    <td>{{ $driver->harga_satuan}}</td>
+                                    <td>{{ $driver->bbm_ltr}}</td> 
+                                    <td>{{ $driver->jumlah_total}}</td>
+
                                     <td>
-                                        <a href="{{ route('supir.edit', $supir->id) }}"
+                                        <a href="{{ route('kendaraan.edit', $kendaraan->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>
-                                        <form action="{{ route('supir.destroy', $supir->id) }}" method="POST"
+                                        <form action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="POST"
                                             style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')

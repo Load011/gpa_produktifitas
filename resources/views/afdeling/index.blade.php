@@ -8,19 +8,19 @@
                 <div class="card card-info">
                     <div class="card-header">
                         <div class="card-title">
-                            <h3> Manajemen Supir </h3>
+                            <h3> Manajemen Afdeling </h3>
                         </div>
                     </div>
 
                     <div class="card-body">
                         <div>
-                            <a href="{{ route('supir.create')}}" class="btn btn-success mb-3">
+                            <a href="{{ route('afdeling.create')}}" class="btn btn-success mb-3">
                                 <i class="fas fa-plus"></i>
-                                <span>Tambah Supir</span>
+                                <span>Tambah Afdeling</span>
                             </a>
-                            @if($supirs->isEmpty())
+                            @if($afds->isEmpty())
                             <div class="alert alert-info">
-                                Tidak Ada Supir
+                                Tidak Ada Afdeling
                             </div>
                             @else
                         </div>
@@ -28,24 +28,26 @@
                             <thead class="thead-fixed">
                                 <tr>
                                     <th>#</th>
-                                    <th>Nama Supir</th>
-                                    <th>No KTP</th>
-                                    <th>No Telepon</th>
+                                    <th>Nama Afdeling</th>
+                                    <th>No Afdeling</th>
+                                    <th>Alias Afdeling</th>
+                                    <th>Kebun Utama</th>
                                     <th>Aksi Tambahan</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach ($supirs as $index=>$supir)
+                                @foreach ($afds as $index=>$afd)
                                 <tr>
                                     <td>{{ $index+1 }}</td>
-                                    <td>{{ $supir->nama_supir }}</td>
-                                    <td>{{ $supir->no_ktp }}</td>
-                                    <td>{{ $supir->no_tlp}}</td>
+                                    <td>{{ $afd->nama_afd }}</td>
+                                    <td>{{ \App\Helpers\RomanNumeral::convert($afd->no_afd) }}</td>
+                                    <td>{{ $afd->alias_afd}}</td>
+                                    <td>{{ $afd->kebun_id}}</td>
                                     <td>
-                                        <a href="{{ route('supir.edit', $supir->id) }}"
+                                        <a href="{{ route('afdeling.edit', $afd->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>
-                                        <form action="{{ route('supir.destroy', $supir->id) }}" method="POST"
+                                        <form action="{{ route('afdeling.destroy', $afd->id) }}" method="POST"
                                             style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')

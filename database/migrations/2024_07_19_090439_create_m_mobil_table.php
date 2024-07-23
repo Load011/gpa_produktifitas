@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('m_mobil', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis_mobil');
+            $table->string('plat_bk');
+            $table->string('no_lambung');
+            $table->string('tanggal_pembuatan');
+            $table->string('stnk');
+            $table->string('pajak');
             $table->timestamps();
         });
     }
