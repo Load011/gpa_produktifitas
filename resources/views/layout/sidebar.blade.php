@@ -42,7 +42,7 @@
         </li>
         <li class="nav-item @if (request()->routeIs('mobil.*') || request()->routeIs('supir.*'))) menu-open @endif">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-database"></i>
+            <i class="nav-icon fas fa-car-side"></i>
             <p>Mobil & Supir
               <i class="right fas fa-angle-left"></i>
             </p>
@@ -62,11 +62,27 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('kendaraan.index') }}" class="nav-link @if (request()->routeIs('kendaraan.*')) active @endif">
-            <i class="nav-icon fas fa-truck"></i>
-            <p>Kendaraan</p>
+        <li class="nav-item @if (request()->routeIs('kendaraan.*') || request()->routeIs('perbaikan.*'))) menu-open @endif">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-money-check-alt"></i>
+            <p>Transaksi
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('kendaraan.index') }}" class="nav-link @if (request()->routeIs('kendaraan.*')) active @endif">
+                <i class="nav-icon fas fa-truck"></i>
+                <p>Kendaraan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('perbaikan.index') }}" class="nav-link @if (request()->routeIs('perbaikan.*')) active @endif">
+                <i class="nav-icon fas fa-toolbox"></i>
+                <p>Perbaikan</p>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>

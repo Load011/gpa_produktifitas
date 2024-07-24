@@ -31,6 +31,7 @@
                                     <th>Nama Supir</th>
                                     <th>No KTP</th>
                                     <th>No Telepon</th>
+                                    <th>Status Kepegawaian</th>
                                     <th>Aksi Tambahan</th>
                                 </tr>
                             </thead>
@@ -42,6 +43,7 @@
                                     <td>{{ $supir->nama_supir }}</td>
                                     <td>{{ $supir->no_ktp }}</td>
                                     <td>{{ $supir->no_tlp}}</td>
+                                    <td>{{ $supir->aktif == "Yes" ? 'Aktif' : 'Tidak Aktif' }}</td>
                                     <td>
                                         <a href="{{ route('supir.edit', $supir->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>

@@ -27,6 +27,14 @@
                                 <label for="no_lambung">No Lambung Kendaraan:</label>
                                 <input type="text" class="form-control" id="no_lambung" name="no_lambung" value="{{ $mobil->no_lambung }}" required>
                             </div>
+                            <div class="form-group">
+                                <label for="stnk">Tanggal Akhir STNK:</label>
+                                <input type="text" class="form-control" id="stnk" name="stnk" value="{{ $mobil->stnk }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pajak">No Lambung Kendaraan:</label>
+                                <input type="text" class="form-control" id="pajak" name="pajak" value="{{ $mobil->pajak }}" required>
+                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>

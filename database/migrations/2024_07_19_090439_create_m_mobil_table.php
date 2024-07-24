@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('jenis_mobil');
             $table->string('plat_bk');
             $table->string('no_lambung');
-            $table->string('tanggal_pembuatan');
-            $table->string('stnk');
-            $table->string('pajak');
+            $table->date('stnk');
+            $table->date('pajak');
             $table->timestamps();
         });
     }

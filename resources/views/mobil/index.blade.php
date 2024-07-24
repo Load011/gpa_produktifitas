@@ -29,6 +29,8 @@
                                     <th> Jenis Mobil </th>
                                     <th> Plat Kendaraan </th>
                                     <th> No Lambung Kendaraan </th>
+                                    <th> Tanggal Akhir STNK</th>
+                                    <th> Tanggal Terakhir Pajak Dibayar</th>
                                     <th> Aksi </th>
                                 </tr>
                             </thead>
@@ -40,6 +42,8 @@
                                     <td>{{$mobil->jenis_mobil}}</td>
                                     <td>{{$mobil->plat_bk}}</td>
                                     <td>{{$mobil->no_lambung}}</td>
+                                    <td>{{$mobil->stnk}}</td>
+                                    <td>{{$mobil->pajak}}</td>
                                     <td>
                                         <a href="{{ route('mobil.edit', $mobil->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>

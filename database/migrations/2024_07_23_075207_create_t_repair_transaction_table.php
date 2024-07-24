@@ -13,7 +13,18 @@ return new class extends Migration
     {
         Schema::create('t_repair_transaction', function (Blueprint $table) {
             $table->id();
+            $table->string('keterangan');
+            $table->decimal('harga_sparepart', 10, 0)->nullable();
+            $table->decimal('harga_ban', 10, 2)->nullable();
+            $table->decimal('harga_perbaikan', 10,2)->nullable();
+            // $table->decimal('harga_bbm', 10, 2)->nullable();
+            $table->decimal('total_harga_keseluruhan');
+            $table->date('tanggal_perbaikan');
+            $table->unsignedBigInteger('mobil_id');
             $table->timestamps();
+
+            $table->foreign('mobil_id')->references('id')->on('m_mobil')->onDelete('cascade');
+
         });
     }
 

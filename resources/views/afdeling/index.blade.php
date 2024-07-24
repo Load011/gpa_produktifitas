@@ -43,7 +43,7 @@
                                     <td>{{ $afd->nama_afd }}</td>
                                     <td>{{ \App\Helpers\RomanNumeral::convert($afd->no_afd) }}</td>
                                     <td>{{ $afd->alias_afd}}</td>
-                                    <td>{{ $afd->kebun_id}}</td>
+                                    <td>{{ $afd->kebun->nama_kebun}}</td>
                                     <td>
                                         <a href="{{ route('afdeling.edit', $afd->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>

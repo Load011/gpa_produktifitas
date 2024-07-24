@@ -8,6 +8,7 @@ use App\Http\Controllers\SupirController;
 use App\Http\Controllers\KebunController;
 use App\Http\Controllers\AfdelingController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\RepairTranController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -66,6 +67,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/kendaraan/{kendaraan}/edit', [KendaraanController::class, 'edit'])->name('kendaraan.edit');
     Route::put('/kendaraan/{kendaraan}', [KendaraanController::class, 'update'])->name('kendaraan.update');
     Route::delete('/kendaraan/{kendaraan}', [KendaraanController::class, 'destroy'])->name('kendaraan.destroy');
+
+    //Route untuk Transaksi Perbaikan
+    Route::get('/perbaikan', [RepairTranController::class, 'index'])->name('perbaikan.index');
+    Route::get('/perbaikan/create', [RepairTranController::class, 'create'])->name('perbaikan.create');
+    Route::post('/perbaikan', [RepairTranController::class, 'store'])->name('perbaikan.store');
+    Route::get('/perbaikan/{perbaikan}', [RepairTranController::class, 'show'])->name('perbaikan.show');
+    Route::get('/perbaikan/{perbaikan}/edit', [RepairTranController::class, 'edit'])->name('perbaikan.edit');
+    Route::put('/perbaikan/{perbaikan}', [RepairTranController::class, 'update'])->name('perbaikan.update');
+    Route::delete('/perbaikan/{perbaikan}', [RepairTranController::class, 'destroy'])->name('perbaikan.destroy');
 });
 
 require __DIR__.'/auth.php';

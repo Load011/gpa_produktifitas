@@ -32,11 +32,11 @@ class Kendaraan extends Model
 
     public function pengemudi()
     {
-        return $this->belongsTo(Supir::class);
+        return $this->belongsTo(Supir::class, 'supir_id');
     }
 
     public function mobil()
     {
-        return $this->belongsTo(Mobil::class);
+        return $this->belongsTo(Mobil::class, 'mobil_id');
     }
 }

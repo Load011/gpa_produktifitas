@@ -24,6 +24,8 @@ class MobilController extends Controller
             'jenis_mobil' => 'required',
             'plat_bk' => 'required',
             'no_lambung' => 'required',
+            'stnk' => 'required',
+            'pajak' => 'required'
         ]);
 
         $mobil = Mobil::create($validateData);
@@ -40,6 +42,8 @@ class MobilController extends Controller
             'jenis_mobil' => 'required',
             'plat_bk' => 'required',
             'no_lambung' => 'required',
+            'stnk' => 'required',
+            'pajak' => 'required'
         ]);
     
         $mobil->update($validateData);

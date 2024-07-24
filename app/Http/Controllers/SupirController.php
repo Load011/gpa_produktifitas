@@ -24,6 +24,7 @@ class SupirController extends Controller
             'nama_supir' => 'required',
             'no_tlp' => 'required',
             'no_ktp' => 'required',
+            'aktif' => 'required'
         ]);
 
         $supir = Supir::create($validateData);
@@ -40,6 +41,7 @@ class SupirController extends Controller
             'nama_supir' => 'required',
             'no_tlp' => 'required',
             'no_ktp' => 'required',
+            'aktif' => 'required'
         ]);
     
         $supir->update($validateData);

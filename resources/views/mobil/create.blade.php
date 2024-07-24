@@ -28,6 +28,14 @@
                                     <label for="no_lambung">No Lambung Kendaraan:</label>
                                     <input type="text" class="form-control" id="no_lambung" name="no_lambung" value="{{ old('no_lambung')}}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="stnk">Tanggal Akhir STNK:</label>
+                                    <input type="date" class="form-control" id="stnk" name="stnk" value="{{ old('stnk')}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pajak">Tanggal Terakhir Pembayaran Pajak:</label>
+                                    <input type="date" class="form-control" id="pajak" name="pajak" value="{{ old('pajak')}}">
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

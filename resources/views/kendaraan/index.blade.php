@@ -8,7 +8,7 @@
                 <div class="card card-info">
                     <div class="card-header">
                         <div class="card-title">
-                            <h3> Manajemen driver </h3>
+                            <h3> Transaksi Bahan Bakar Kendaraan </h3>
                         </div>
                     </div>
 
@@ -16,11 +16,11 @@
                         <div>
                             <a href="{{ route('kendaraan.create')}}" class="btn btn-success mb-3">
                                 <i class="fas fa-plus"></i>
-                                <span>Tambah Penempatan Supir</span>
+                                <span>Tambah Transaksi</span>
                             </a>
                             @if($drivers->isEmpty())
                             <div class="alert alert-info">
-                                Tidak Ada Penempatan
+                                Tidak Ada Transaksi
                             </div>
                             @else
                         </div>
@@ -32,6 +32,7 @@
                                     <th>Mobil Yang Digunakan</th>
                                     <th>Harga Per Liter</th>
                                     <th>Jumlah Pengisian</th>
+                                    <th>Total Pembayaran</th>
                                 </tr>
                             </thead>
 
@@ -41,14 +42,14 @@
                                     <td>{{ $index+1 }}</td>
                                     <td>{{ $driver->pengemudi->nama_supir }}</td>
                                     <td>{{ $driver->mobil->jenis_mobil }}</td>
-                                    <td>{{ $driver->harga_satuan}}</td>
-                                    <td>{{ $driver->bbm_ltr}}</td> 
-                                    <td>{{ $driver->jumlah_total}}</td>
+                                    <td>Rp {{ number_format($driver->harga_satuan, 0, ',', '.') }}</td>
+                                    <td>{{ $driver->bbm_ltr}} Liter</td> 
+                                    <td>Rp {{ number_format($driver->jumlah_total, 0, ',', '.')}}</td>
 
                                     <td>
-                                        <a href="{{ route('kendaraan.edit', $kendaraan->id) }}"
+                                        <a href="{{ route('kendaraan.edit', $driver->id) }}"
                                             class="btn btn-secondary btn-sm">Edit</a>
-                                        <form action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="POST"
+                                        <form action="{{ route('kendaraan.destroy', $driver->id) }}" method="POST"
                                             style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
