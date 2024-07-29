@@ -62,6 +62,12 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('trip.index') }}" class="nav-link @if (request()->routeIs('trip.*')) active @endif">
+            <i class="nav-icon fas fa-road"></i>
+            <p>Perjalanan / Trip</p>
+          </a>
+        </li>
         <li class="nav-item @if (request()->routeIs('kendaraan.*') || request()->routeIs('perbaikan.*'))) menu-open @endif">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-money-check-alt"></i>
@@ -84,6 +90,12 @@
             </li>
           </ul>
         </li>
+        {{-- <li class="nav-item">
+          <a href="{{ route('pengantaran.index') }}" class="nav-link @if (request()->routeIs('pengantaran.*')) active @endif">
+            <i class="nav-icon fas fa-truck-pickup"></i>
+            <p>Pengantaran Tandan</p>
+          </a>
+        </li> --}}
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

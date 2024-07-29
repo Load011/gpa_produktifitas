@@ -31,7 +31,7 @@ class AfdelingController extends Controller
 
         Afdeling::create($request->all());
 
-        return redirect()->route('kebun.index')->with('success', 'Afdeling created successfully.');
+        return redirect()->route('afdeling.index')->with('success', 'Afdeling created successfully.');
     }
 
     public function show(Afdeling $afds)

@@ -31,7 +31,6 @@
                                     <th>No Lambung</th>
                                     <th>Tanggal Perbaikan</th>
                                     <th>Harga Sparepart</th>
-                                    <th>Harga Ban </th>
                                     <th>Harga Perbaikan</th>
                                     <th>Total Harga Keseluruhan</th>
                                     <th>Keterangan</th>
@@ -44,7 +43,6 @@
                                         <td>{{ $transaction->mobil->no_lambung }}</td>
                                         <td>{{ $transaction->tanggal_perbaikan}}</td>
                                         <td>Rp {{number_format($transaction->harga_sparepart, 0, ',', '.')}}</td>
-                                        <td>Rp {{number_format($transaction->harga_ban, 0, ',', '.')}}</td>
                                         <td>Rp {{number_format($transaction->harga_perbaikan, 0, ',', '.')}}</td>
                                         <td>Rp {{number_format($transaction->total_harga_keseluruhan, 0, ',', '.')}}</td>
                                         <td>{{ $transaction->keterangan }}</td>

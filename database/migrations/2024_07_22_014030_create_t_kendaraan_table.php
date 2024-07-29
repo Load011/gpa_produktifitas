@@ -15,9 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('mobil_id');
             $table->unsignedBigInteger('supir_id');
-            $table->decimal('harga_satuan', 10,0);
-            $table->integer('bbm_ltr');
-            $table->decimal('jumlah_total', 10,0)->nullable();
             $table->timestamps();
 
             $table->foreign('mobil_id')->references('id')->on('m_mobil')->onDelete('cascade');

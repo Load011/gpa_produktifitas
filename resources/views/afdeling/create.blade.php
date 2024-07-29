@@ -32,7 +32,7 @@
                                 <div class="form-group">
                                     <label for="kebun_id">Kebun Utama:</label>
                                     <select class="form-control" id="kebun_id" name="kebun_id">
-                                        <option value="" disabled selected>Pilih Jenis Kebun</option>
+                                        <option value="" disabled selected>Pilih Kebun</option>
                                         @foreach($kebuns as $kebun)
                                             <option value="{{ $kebun->id }}" {{ old('kebun_id') == $kebun->id ? 'selected' : '' }}>
                                                 {{ $kebun->nama_kebun }}

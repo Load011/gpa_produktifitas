@@ -9,6 +9,7 @@ use App\Http\Controllers\KebunController;
 use App\Http\Controllers\AfdelingController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\RepairTranController;
+use App\Http\Controllers\TripController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -76,6 +77,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/perbaikan/{perbaikan}/edit', [RepairTranController::class, 'edit'])->name('perbaikan.edit');
     Route::put('/perbaikan/{perbaikan}', [RepairTranController::class, 'update'])->name('perbaikan.update');
     Route::delete('/perbaikan/{perbaikan}', [RepairTranController::class, 'destroy'])->name('perbaikan.destroy');
+
+    //Route untuk trip Tandan
+    Route::get('/trip', [TripController::class, 'index'])->name('trip.index');
+    Route::get('/trip/create', [TripController::class, 'create'])->name('trip.create');
+    Route::post('/trip', [TripController::class, 'store'])->name('trip.store');
+    Route::get('/trip/{trip}', [TripController::class, 'show'])->name('trip.show');
+    Route::get('/trip/{trip}/edit', [TripController::class, 'edit'])->name('trip.edit');
+    Route::put('/trip/{trip}', [TripController::class, 'update'])->name('trip.update');
+    Route::delete('/trip/{trip}', [TripController::class, 'destroy'])->name('trip.destroy');
+    Route::get('/get-afdelings/{kebun_id}', [TripController::class, 'getAfdelings']);
+
 });
 
 require __DIR__.'/auth.php';

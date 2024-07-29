@@ -18,7 +18,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="supir_id">Supir</label>
-                                        <select name="supir_id" id="supir_id" class="form-control">
+                                        <select class="form-control" id="supir_id" name="supir_id">
+                                            <option value="" disabled selected>Pilih Supir</option>
                                             @foreach($pengemudis as $pengemudi)
                                                 <option value="{{ $pengemudi->id }}">{{ $pengemudi->nama_supir }}</option>
                                             @endforeach
@@ -27,6 +28,7 @@
                                     <div class="form-group">
                                         <label for="mobil_id">Mobil</label>
                                         <select name="mobil_id" id="mobil_id" class="form-control">
+                                            <option value="" disabled selected>Pilih Mobil</option>
                                             @foreach($mobils as $mobil)
                                                 <option value="{{ $mobil->id }}">{{ $mobil->jenis_mobil }} - {{$mobil->plat_bk}} - {{$mobil->no_lambung}}</option>
                                             @endforeach
@@ -36,11 +38,16 @@
             
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="harga_satuan">Harga Satuan</label>
-                                        <input type="text" name="harga_satuan" id="harga_satuan" class="form-control">
+                                        <label for="harga_satuan">Harga per Liter</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Rp</span>
+                                            </div>
+                                            <input type="text" name="harga_satuan" id="harga_satuan" class="form-control currency" onkeyup="formatInput(this)">
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="bbm_ltr">BBM Liter</label>
+                                        <label for="bbm_ltr">Banyak Pengisian</label>
                                         <div class="input-group">
                                             <input type="text" name="bbm_ltr" id="bbm_ltr" class="form-control">
                                             <div class="input-group-append">
@@ -60,6 +67,27 @@
         </div>
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+
+<script>
+    function formatInput(input) {
+        let value = input.value.replace(/[^0-9]/g, '');
+        if (value) {
+            value = parseInt(value, 10).toLocaleString('en-US').replace(/,/g, '.');
+        }
+        input.value = value;
+    }
+    function unformatInput(input) {
+        return input.value.replace(/[^0-9.]/g, '').replace(/\./g, '');
+    }
+    document.getElementById('currencyForm').addEventListener('submit', function(event) {
+        let currencyFields = document.querySelectorAll('.currency');
+        currencyFields.forEach(function(field) {
+            field.value = unformatInput(field);
+        });
+    });
+</script>
 
 
 @endsection

@@ -23,11 +23,11 @@ class KendaraanController extends Controller
 
     public function store(Request $request)
     {
+        $request['harga_satuan'] = $this->convertToNumeric($request['harga_satuan']);
+
         $request->validate([
             'supir_id' => 'required|exists:m_supir,id',
             'mobil_id' => 'required|exists:m_mobil,id',
-            'harga_satuan' => 'required',
-            'bbm_ltr' => 'required'
         ]);
 
         Kendaraan::create($request->all());
@@ -42,8 +42,6 @@ class KendaraanController extends Controller
         $validateData = $request->validate([
             'supir_id' => 'required|exists:m_supir,id',
             'mobil_id' => 'required|exists:m_mobil,id',
-            'harga_satuan' => 'required',
-            'bbm_ltr' => 'required'
         ]);
     
         $kendaraan->update($validateData);
@@ -56,5 +54,10 @@ class KendaraanController extends Controller
         $mobil->delete();
 
         return redirect()->route('mobil.index')->with('success', 'Asset deleted successfully.');
+    }
+
+    private function convertToNumeric($value)
+    {
+        return empty($value) ? null : floatval(str_replace('.', '', $value));
     }
 }
