@@ -12,6 +12,8 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+        <!-- Master Kebun -->
         <li class="nav-item">
           <a href="{{ route('dashboard') }}" class="nav-link @if (request()->routeIs('dashboard')) active @endif">
             <i class="nav-icon fas fa-desktop"></i>
@@ -40,10 +42,45 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item @if (request()->routeIs('mobil.*') || request()->routeIs('supir.*'))) menu-open @endif">
+
+
+        <!-- Master Pegawai -->
+        <li class="nav-item @if (request()->routeIs('jabatan.*') || request()->routeIs('supir.*'))) menu-open @endif">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-car-side"></i>
-            <p>Mobil & Supir
+            <i class="nav-icon fas fa-users"></i>
+            <p>Master Pegawai
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('jabatan.index') }}" class="nav-link @if (request()->routeIs('jabatan.*')) active @endif">
+                <i class="nav-icon fas fa-id-badge"></i>
+                <p>Jabatan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('karyawan.index') }}" class="nav-link @if (request()->routeIs('karyawan.*')) active @endif">
+                <i class="nav-icon fas fa-id-card"></i>
+                <p>Karyawan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('supir.index') }}" class="nav-link @if (request()->routeIs('supir.*')) active @endif">
+                <i class="nav-icon fas fa-user-tie"></i>
+                <p>Supir Mobil</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+
+        <!-- Master Mobil dan trip -->
+        <li class="nav-item @if (request()->routeIs('mobil.*') || request()->routeIs('trip.*'))) menu-open @endif">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tree"></i>
+            <p>Master Mobil dan Trip
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -55,19 +92,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('supir.index') }}" class="nav-link @if (request()->routeIs('supir.*')) active @endif">
-                <i class="nav-icon fas fa-user-tie"></i>
-                <p>Supir Mobil</p>
+              <a href="{{ route('trip.index') }}" class="nav-link @if (request()->routeIs('trip.*')) active @endif">
+                <i class="nav-icon fas fa-road"></i>
+                <p>Perjalanan / Trip</p>
               </a>
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('trip.index') }}" class="nav-link @if (request()->routeIs('trip.*')) active @endif">
-            <i class="nav-icon fas fa-road"></i>
-            <p>Perjalanan / Trip</p>
-          </a>
-        </li>
+
+
+        <!-- Transaksi -->
         <li class="nav-item @if (request()->routeIs('kendaraan.*') || request()->routeIs('perbaikan.*'))) menu-open @endif">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-money-check-alt"></i>
@@ -90,12 +124,6 @@
             </li>
           </ul>
         </li>
-        {{-- <li class="nav-item">
-          <a href="{{ route('pengantaran.index') }}" class="nav-link @if (request()->routeIs('pengantaran.*')) active @endif">
-            <i class="nav-icon fas fa-truck-pickup"></i>
-            <p>Pengantaran Tandan</p>
-          </a>
-        </li> --}}
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

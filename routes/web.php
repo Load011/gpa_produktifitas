@@ -9,6 +9,8 @@ use App\Http\Controllers\KebunController;
 use App\Http\Controllers\AfdelingController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\RepairTranController;
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\TripController;
 
 Route::get('/', function () {
@@ -87,6 +89,26 @@ Route::middleware('auth')->group(function () {
     Route::put('/trip/{trip}', [TripController::class, 'update'])->name('trip.update');
     Route::delete('/trip/{trip}', [TripController::class, 'destroy'])->name('trip.destroy');
     Route::get('/get-afdelings/{kebun_id}', [TripController::class, 'getAfdelings']);
+
+    //Route Jabatan
+    Route::get('/jabatan', [JabatanController::class, 'index'])->name('jabatan.index');
+    Route::get('/jabatan/create', [JabatanController::class, 'create'])->name('jabatan.create');
+    Route::post('/jabatan', [JabatanController::class, 'store'])->name('jabatan.store');
+    Route::get('/jabatan/{jabatan}', [JabatanController::class, 'show'])->name('jabatan.show');
+    Route::get('/jabatan/{jabatan}/edit', [JabatanController::class, 'edit'])->name('jabatan.edit');
+    Route::put('/jabatan/{jabatan}', [JabatanController::class, 'update'])->name('jabatan.update');
+    Route::delete('/jabatan/{jabatan}', [JabatanController::class, 'destroy'])->name('jabatan.destroy');
+
+    //Route Karyawan
+    Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan.index');
+    Route::get('/karyawan/create', [KaryawanController::class, 'create'])->name('karyawan.create');
+    Route::post('/karyawan', [KaryawanController::class, 'store'])->name('karyawan.store');
+    Route::get('/karyawan/{karyawan}', [KaryawanController::class, 'show'])->name('karyawan.show');
+    Route::get('/karyawan/{karyawan}/edit', [KaryawanController::class, 'edit'])->name('karyawan.edit');
+    Route::put('/karyawan/{karyawan}', [KaryawanController::class, 'update'])->name('karyawan.update');
+    Route::delete('/karyawan/{karyawan}', [KaryawanController::class, 'destroy'])->name('karyawan.destroy');
+    Route::get('/get-afdelings/{kebun_id}', [KaryawanController::class, 'getAfdelings']);
+
 
 });
 
