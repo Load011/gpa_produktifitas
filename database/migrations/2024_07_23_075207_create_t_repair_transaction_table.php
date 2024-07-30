@@ -17,8 +17,8 @@ return new class extends Migration
             $table->decimal('harga_sparepart', 10, 0)->nullable();
             $table->decimal('harga_ban', 10, 2)->nullable();
             $table->decimal('harga_perbaikan', 10,2)->nullable();
-            // $table->decimal('harga_bbm', 10, 2)->nullable();
             $table->decimal('total_harga_keseluruhan', 10, 0);
+            $table->decimal('harga_bbm', 10, 2)->nullable();
             $table->date('tanggal_perbaikan');
             $table->unsignedBigInteger('mobil_id');
             $table->timestamps();

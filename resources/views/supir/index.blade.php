@@ -30,6 +30,7 @@
                                     <th>#</th>
                                     <th>Nama Supir</th>
                                     <th>No KTP</th>
+                                    <th>No SIM</th>
                                     <th>No Telepon</th>
                                     <th>Status Kepegawaian</th>
                                     <th>Aksi Tambahan</th>
@@ -42,6 +43,7 @@
                                     <td>{{ $index+1 }}</td>
                                     <td>{{ $supir->nama_supir }}</td>
                                     <td>{{ $supir->no_ktp }}</td>
+                                    <td>{{ $supir->no_sim}}</td>
                                     <td>{{ $supir->no_tlp}}</td>
                                     <td>{{ $supir->aktif == "Yes" ? 'Aktif' : 'Tidak Aktif' }}</td>
                                     <td>

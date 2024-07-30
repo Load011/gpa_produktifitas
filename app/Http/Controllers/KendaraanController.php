@@ -11,7 +11,9 @@ class KendaraanController extends Controller
 {
     public function index(){
         $drivers = Kendaraan::all();
-        return view('kendaraan.index', compact('drivers'));
+        $pengemudis = Supir::all();
+        $mobils = Mobil::all();
+        return view('kendaraan.index', compact('drivers', 'pengemudis', 'mobils'));
     }
 
     public function create()
@@ -23,7 +25,6 @@ class KendaraanController extends Controller
 
     public function store(Request $request)
     {
-        $request['harga_satuan'] = $this->convertToNumeric($request['harga_satuan']);
 
         $request->validate([
             'supir_id' => 'required|exists:m_supir,id',
@@ -56,8 +57,4 @@ class KendaraanController extends Controller
         return redirect()->route('mobil.index')->with('success', 'Asset deleted successfully.');
     }
 
-    private function convertToNumeric($value)
-    {
-        return empty($value) ? null : floatval(str_replace('.', '', $value));
-    }
 }

@@ -34,6 +34,10 @@
                                     <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="{{ old('no_ktp')}}" pattern="\d{16}" maxlength="16" minlength="16" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="no_sim">No SIM Supir:</label>
+                                    <input type="text" class="form-control" id="no_sim" name="no_sim" value="{{ old('no_sim')}}" pattern="\d{20}" maxlength="20" minlength="20" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="aktif">Status Kepegawaian:</label>
                                     <select name="aktif" id="aktif" class="form-control">
                                         <option value="Yes">Aktif</option>

@@ -35,27 +35,6 @@
                                         </select>
                                     </div>
                                 </div>
-            
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="harga_satuan">Harga per Liter</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Rp</span>
-                                            </div>
-                                            <input type="text" name="harga_satuan" id="harga_satuan" class="form-control currency" onkeyup="formatInput(this)">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="bbm_ltr">Banyak Pengisian</label>
-                                        <div class="input-group">
-                                            <input type="text" name="bbm_ltr" id="bbm_ltr" class="form-control">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Liter</span>
-                                            </div>
-                                        </div>
-                                    </div>                                    
-                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="button" class="btn btn-secondary ml-2" onclick="window.location.href='{{ route('kendaraan.index') }}'">Batal</button>

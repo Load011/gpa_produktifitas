@@ -24,6 +24,7 @@ class SupirController extends Controller
             'nama_supir' => 'required',
             'no_tlp' => 'required',
             'no_ktp' => 'required',
+            'no_sim' => 'required',
             'aktif' => 'required'
         ]);
 
@@ -41,6 +42,7 @@ class SupirController extends Controller
             'nama_supir' => 'required',
             'no_tlp' => 'required',
             'no_ktp' => 'required',
+            'no_sim' => 'required',
             'aktif' => 'required'
         ]);
     

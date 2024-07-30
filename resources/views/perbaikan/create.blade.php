@@ -54,10 +54,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="tanggal_perbaikan">Tanggal Perbaikan</label>
-                                    <input type="date" name="tanggal_perbaikan" id="tanggal_perbaikan" class="form-control">
-                                </div>
-                                {{-- <div class="form-group col-md-6">
                                     <label for="harga_bbm">Harga BBM</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -65,7 +61,11 @@
                                         </div>
                                         <input type="text" name="harga_bbm" id="harga_bbm" class="form-control currency" onkeyup="formatInput(this)">
                                     </div>
-                                </div> --}}
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="tanggal_perbaikan">Tanggal Perbaikan</label>
+                                    <input type="date" name="tanggal_perbaikan" id="tanggal_perbaikan" class="form-control">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="keterangan">Keterangan</label>

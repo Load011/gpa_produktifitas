@@ -30,7 +30,7 @@
                                     <th>#</th>
                                     <th>Asal Kebun</th>
                                     <th>Afdeling</th>
-                                    <th>Tujuan Kebun</th>
+                                    <th>Tujuan PKS</th>
                                     <th>Harga Per Trip</th>
                                     <th>Jarak Per Trip</th>
                                     <th>Aksi Tambahan</th>

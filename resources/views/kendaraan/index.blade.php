@@ -29,10 +29,10 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nama Supir</th>
+                                    <th>No SIM</th>
+                                    <th>No Telepon</th>
                                     <th>Mobil Yang Digunakan</th>
-                                    <th>Harga Per Liter</th>
-                                    <th>Jumlah Pengisian</th>
-                                    <th>Total Pembayaran</th>
+                                    <th>Plat Kendaraan</th>
                                 </tr>
                             </thead>
 
@@ -41,10 +41,10 @@
                                 <tr>
                                     <td>{{ $index+1 }}</td>
                                     <td>{{ $driver->pengemudi->nama_supir }}</td>
+                                    <td>{{ $driver->pengemudi->no_sim }}</td>
+                                    <td>{{ $driver->pengemudi->no_ktp }}</td>
                                     <td>{{ $driver->mobil->jenis_mobil }}</td>
-                                    <td>Rp {{ number_format($driver->harga_satuan, 0, ',', '.') }}</td>
-                                    <td>{{ $driver->bbm_ltr}} Liter</td> 
-                                    <td>Rp {{ number_format($driver->jumlah_total, 0, ',', '.')}}</td>
+                                    <td>{{ $driver->mobil->plat_bk }}</td>
 
                                     <td>
                                         <a href="{{ route('kendaraan.edit', $driver->id) }}"

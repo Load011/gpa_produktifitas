@@ -25,14 +25,14 @@ class RepairTranController extends Controller
         $request['harga_sparepart'] = $this->convertToNumeric($request['harga_sparepart']);
         $request['harga_ban'] = $this->convertToNumeric($request['harga_ban']);
         $request['harga_perbaikan'] = $this->convertToNumeric($request['harga_perbaikan']);
-
+        $request['harga_bbm'] = $this->convertToNumeric($request['harga_bbm']);
 
         $request->validate([
             'keterangan' => 'required|string|max:255',
             'harga_sparepart',
             'harga_ban',
             'harga_perbaikan',
-            // 'harga_bbm' => 'required|numeric',
+            'harga_bbm' => 'required|numeric',
             'mobil_id' => 'required|exists:m_mobil,id',
             'tanggal_perbaikan' => 'required'
         ]);

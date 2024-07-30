@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_supir');
             $table->string('no_tlp');
             $table->string('no_ktp');
+            $table->string('no_sim');
             $table->string('aktif');
             $table->timestamps();
         });

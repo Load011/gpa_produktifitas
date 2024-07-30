@@ -33,7 +33,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="tujuan_trip">Tujuan Kebun:</label>
+                                        <label for="tujuan_trip">Tujuan PKS:</label>
                                         <select class="form-control" id="tujuan_trip" name="tujuan_trip" required>
                                             <option value="" disabled selected>Pilih Tujuan Kebun</option>
                                             @foreach($kebuns as $kebun)

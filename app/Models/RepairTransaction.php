@@ -15,7 +15,7 @@ class RepairTransaction extends Model
         'harga_sparepart',
         'harga_ban',
         'harga_perbaikan',
-        // 'harga_bbm',
+        'harga_bbm',
         'total_harga_keseluruhan',
         'mobil_id',
         'tanggal_perbaikan'
@@ -28,16 +28,16 @@ class RepairTransaction extends Model
             $model->total_harga_keseluruhan = 
                 $model->harga_sparepart + 
                 $model->harga_ban + 
-                $model->harga_perbaikan;
-                // $model->harga_bbm;
+                $model->harga_perbaikan +
+                $model->harga_bbm;
         });
 
         static::updating(function ($model) {
             $model->total_harga_keseluruhan = 
                 $model->harga_sparepart + 
                 $model->harga_ban + 
-                $model->harga_perbaikan;
-                // $model->harga_bbm;
+                $model->harga_perbaikan +
+                $model->harga_bbm;
         });
     }
 

@@ -14,6 +14,7 @@ class Supir extends Model
     protected $fillable = [
         'nama_supir',
         'no_tlp',
+        'no_sim',
         'no_ktp',
         'aktif'
     ];
