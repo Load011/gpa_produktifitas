@@ -40,12 +40,18 @@
                 <p>Afdeling Kebun</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{{ route('blok.index') }}" class="nav-link @if (request()->routeIs('blok.*')) active @endif">
+                <i class="nav-icon fas fa-map-marker"></i>
+                <p>Blok Kebun</p>
+              </a>
+            </li>
           </ul>
         </li>
 
 
         <!-- Master Pegawai -->
-        <li class="nav-item @if (request()->routeIs('jabatan.*') || request()->routeIs('supir.*'))) menu-open @endif">
+        <li class="nav-item @if (request()->routeIs('jabatan.*') || request()->routeIs('karyawan.*') || request()->routeIs('pengawas.*') ||request()->routeIs('supir.*'))) menu-open @endif">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>Master Pegawai
@@ -57,6 +63,12 @@
               <a href="{{ route('jabatan.index') }}" class="nav-link @if (request()->routeIs('jabatan.*')) active @endif">
                 <i class="nav-icon fas fa-id-badge"></i>
                 <p>Jabatan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('pengawas.index') }}" class="nav-link @if (request()->routeIs('pengawas.*')) active @endif">
+                <i class="nav-icon fas fa-user-secret"></i>
+                <p>Pengawas</p>
               </a>
             </li>
             <li class="nav-item">

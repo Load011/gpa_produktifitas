@@ -11,7 +11,10 @@ use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\RepairTranController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\BlokController;
+use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\PHKController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -108,6 +111,31 @@ Route::middleware('auth')->group(function () {
     Route::put('/karyawan/{karyawan}', [KaryawanController::class, 'update'])->name('karyawan.update');
     Route::delete('/karyawan/{karyawan}', [KaryawanController::class, 'destroy'])->name('karyawan.destroy');
     Route::get('/get-afdelings/{kebun_id}', [KaryawanController::class, 'getAfdelings']);
+
+    //Route Blok
+    Route::get('/blok', [BlokController::class, 'index'])->name('blok.index');
+    Route::get('/blok/create', [BlokController::class, 'create'])->name('blok.create');
+    Route::post('/blok', [BlokController::class, 'store'])->name('blok.store');
+    Route::get('/blok/{blok}', [BlokController::class, 'show'])->name('blok.show');
+    Route::get('/blok/{blok}/edit', [BlokController::class, 'edit'])->name('blok.edit');
+    Route::put('/blok/{blok}', [BlokController::class, 'update'])->name('blok.update');
+    Route::delete('/blok/{blok}', [BlokController::class, 'destroy'])->name('blok.destroy');
+    Route::get('/get-afdelings/{kebun_id}', [BlokController::class, 'getAfdelings']);
+
+    //Route Pengawas
+    Route::get('/pengawas', [PengawasController::class, 'index'])->name('pengawas.index');
+    Route::get('/pengawas/create', [PengawasController::class, 'create'])->name('pengawas.create');
+    Route::post('/pengawas', [PengawasController::class, 'store'])->name('pengawas.store');
+    Route::get('/pengawas/{pengawas}', [PengawasController::class, 'show'])->name('pengawas.show');
+    Route::get('/pengawas/{pengawas}/edit', [PengawasController::class, 'edit'])->name('pengawas.edit');
+    Route::put('/pengawas/{pengawas}', [PengawasController::class, 'update'])->name('pengawas.update');
+    Route::delete('/pengawas/{pengawas}', [PengawasController::class, 'destroy'])->name('pengawas.destroy');
+
+    //Route PHK
+    Route::get('/phk/create', [PHKController::class, 'create'])->name('phk.create');
+    Route::post('/phk/store', [PHKController::class, 'store'])->name('phk.store');
+    Route::get('/phk/getKaryawan/{id}', [PHKController::class, 'getKaryawan'])->name('phk.getKaryawan');
+
 
 
 });
